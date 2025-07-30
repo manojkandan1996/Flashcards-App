@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Flashcards App</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <div class="container">
+    <h1>Flashcards</h1>
+
+    <section id="deck-section">
+      <h2>Decks</h2>
+      <ul id="deck-list"></ul>
+      <input type="text" id="new-deck-name" placeholder="New deck name" />
+      <button id="add-deck-btn">Add Deck</button>
+    </section>
+
+    <section id="cards-section" class="hidden">
+      <h2>Cards in <span id="deck-name"></span></h2>
+      <ul id="card-list"></ul>
+      <input type="text" id="q-input" placeholder="Question" />
+      <input type="text" id="a-input" placeholder="Answer" />
+      <button id="add-card-btn">Add Card</button>
+      <button id="start-quiz-btn">Start Quiz</button>
+    </section>
+
+    <section id="quiz-section" class="hidden">
+      <div id="card" class="card">
+        <div class="front"></div>
+        <div class="back"></div>
+      </div>
+      <input type="text" id="user-answer" placeholder="Your answer" />
+      <button id="submit-answer-btn">Submit</button>
+      <p id="feedback"></p>
+      <p>Correct: <span id="correct-count">0</span>, Incorrect: <span id="incorrect-count">0</span></p>
+    </section>
+  </div>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
